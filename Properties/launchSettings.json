@@ -1,0 +1,10 @@
+﻿{
+  "profiles": {
+    "SchoolAPI": {
+      "commandName": "Project",
+      "launchUrl": "",
+      "dotnetRunMessages": true,
+      "applicationUrl": ""
+    }
+  }
+}
