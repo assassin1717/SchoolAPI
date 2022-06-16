@@ -24,6 +24,8 @@ namespace SchoolAPI
         {
             services.AddCors();
             services.AddControllers();
+            services.AddEndpointsApiExplorer();
+            services.AddSwaggerGen();
             var key = Encoding.ASCII.GetBytes(Settings.Secret);
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(options =>
@@ -48,9 +50,12 @@ namespace SchoolAPI
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseSwagger();
+            app.UseSwaggerUI();
+
             app.UseRouting();
 
-            app.UseCors(x => x
+            app.UseCors(options => options
                 .AllowAnyOrigin()
                 .AllowAnyMethod()
                 .AllowAnyHeader());

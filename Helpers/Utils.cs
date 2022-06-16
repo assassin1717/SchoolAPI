@@ -21,8 +21,8 @@ namespace SchoolAPI.Helpers
         public static List<User> SetUsersList()
         {
             var users = new List<User>();
-            users.Add(new User { Id = 0, Username = "batman", Password = "batman", Role = "professor" });
-            users.Add(new User { Id = 1, Username = "robin", Password = "robin", Role = "student" });
+            users.Add(new User { Username = "batman", Password = "batman", Role = "professor" });
+            users.Add(new User { Username = "robin", Password = "robin", Role = "student" });
             return users;
         }
 
@@ -143,7 +143,7 @@ namespace SchoolAPI.Helpers
                         avg += student.Subjects[i].Avg;
                     }
                 }
-
+                student.Id = id;
                 student.Avg = avg / student.Subjects.Count;
                 AppGlobals.Students[id] = student;
                 return true;
